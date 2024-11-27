@@ -9,7 +9,7 @@ app.use(cors());
 
 function randomTodos() {
     const randomIndex = Math.floor(Math.random() * todos.length) + 1;
-    const shuffledTodos = todos.slice().sort(() => 0.5 - Math.random());
+    const shuffledTodos = todos.slice().sort(() => Math.random() - Math.random());
     return shuffledTodos.slice(1, randomIndex);
 }
 
