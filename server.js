@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
-const todos = require('./data.js')
+const cors = require('cors');
+const todos = require('./data.js');
 
 // function getRandomTodo() { 
 //     const randomIndex = Math.floor(Math.random() * todos.length);
