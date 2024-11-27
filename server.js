@@ -3,6 +3,8 @@ const app = express();
 const cors = require('cors');
 const todos = require('./data.js');
 
+app.use(cors());
+
 // function getRandomTodo() { 
 //     const randomIndex = Math.floor(Math.random() * todos.length);
 //      return todos[randomIndex]; 
