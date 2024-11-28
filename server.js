@@ -15,8 +15,21 @@ function randomTodos() {
 
 
 app.get('/todos', (req,res)=>{
-    res.send(randomTodos());
-})
+    if(req.query.id){
+        const id = parseInt(req.query.id)-1;
+        if(id>=0 && id<todos.length){
+            res.send(todos[id])
+        }else{
+            res.status(404).send({ error: 'Todo not found' });
+        }
+    } else{
+        res.send(randomTodos());
+    }
+});
+
+
+
+
 
 app.listen(3000, ()=>{
     console.log("running...")
